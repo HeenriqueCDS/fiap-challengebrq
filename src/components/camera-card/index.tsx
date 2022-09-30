@@ -5,7 +5,7 @@ export const CameraCard = ({ title, videoUrl }: CameraCardProps) => {
     return (
         <Flex borderRadius="6px" bg="background.fg" flexDir="column" h="fit-content" paddingTop="4">
             <Text fontWeight="medium" ml="4" mb="4">{title}</Text>
-            <Image w={734} h={564} objectFit="cover" src={videoUrl} alt="Entrance" />
+            <Image w="100%" h="100%" maxW={734} maxH={564} objectFit="cover" src={videoUrl} alt="Entrance" />
         </Flex>
     )
 }

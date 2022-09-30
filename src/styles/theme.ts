@@ -16,6 +16,7 @@ export const theme = extendTheme(
             background: {
                 fg: '#181818',
                 bg: '#141414',
+                md: '#525252',
             }
         },
         components: {
