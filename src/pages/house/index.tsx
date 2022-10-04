@@ -14,7 +14,7 @@ export const HousePage = () => {
     return (
         <AppLayout>
             <Flex justifyContent="space-between" borderRadius="6px">
-                <CameraCard title="Câmera exterior" videoUrl={livingRoom} />
+                <CameraCard title="Câmera sala" videoUrl={livingRoom} />
                 <Flex bg="background.fg" w="400px" h="100%" borderRadius="6px" flexDir="column">
                     <TemperatureDisplay location="Sala de estar" isControlled temperature={10} />
                     <Divider />

@@ -1,9 +1,9 @@
-import { IconType } from "react-icons/lib";
+import { IconType } from "react-icons";
+
 
 type turnButtonProps = {
     tooltip: string;
     onClick: () => void;
-    icon: IconType;
 }
 
 export type ControllerListProps = {
@@ -12,4 +12,6 @@ export type ControllerListProps = {
     isControlled?: boolean;
     turnOn?: turnButtonProps;
     turnOff?: turnButtonProps;
+    turnOnIcon?: IconType;
+    turnOffIcon?: IconType;
 }

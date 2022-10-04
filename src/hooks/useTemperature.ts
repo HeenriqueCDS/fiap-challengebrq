@@ -1,27 +1,42 @@
-import { api} from "../services/api"
+import React from "react"
+import { api } from "../services/api"
 
 const getUserIP = async () => {
     const res = await api.get("https://geolocation-db.com/json/")
     return res.data.IPv4
 }
 
-export const useLocalTemperature = async () => {
-    const ip = await getUserIP()
 
-    const res = await api.get(`https://api.hgbrasil.com/weather`, {
-        params: {
-            format: 'json-cors',
-            user_ip: ip,
-            key: "d2ff4f08"
-        }, 
+export const useLocalTemperature = () => {
+    const [isLoading, setIsLoading] = React.useState(true)
+    const [temperature, setTemperature] = React.useState(0)
+    const [city, setCity] = React.useState("")
+    
+    const handleFetch = async () => {
+        const ip = await getUserIP()
 
-    })
+        const res = await api.get(`https://api.hgbrasil.com/weather`, {
+            params: {
+                format: 'json-cors',
+                user_ip: ip,
+                key: "d2ff4f08"
+            },
 
-    const { temp, city } = res.data.results
+        })
 
-    return { temp, city }
+        const { temp, city } = res.data.results
 
+        setTemperature(temp)
+        setCity(city)
+
+    }
+    React.useEffect(() => {
+        handleFetch().then(() => setIsLoading(false))
+    }, [])
+
+    return { isLoading,temperature, city }
 }
+
 
 // {
 // 	"by": "geo_ip",
