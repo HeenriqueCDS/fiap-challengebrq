@@ -19,7 +19,7 @@ export const useLocalTemperature = () => {
             params: {
                 format: 'json-cors',
                 user_ip: ip,
-                key: "d2ff4f08"
+                key: "bfae1b1a"
             },
 
         })
