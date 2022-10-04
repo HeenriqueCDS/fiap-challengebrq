@@ -54,7 +54,7 @@ export const GlobalController = () => {
                     turnOffIcon={BsLightbulbOffFill}
                 >
                     <ControllerDevice name="Ligadas" value="3" />
-                    <ControllerDevice name="Desligas" value="0" />
+                    <ControllerDevice name="Desligadas" value="0" />
                 </ControllerList>
             </SimpleGrid>
         </Flex>
